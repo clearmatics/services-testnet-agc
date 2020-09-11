@@ -13,4 +13,4 @@ COPY --from=autonity /usr/local/bin/autonity /usr/local/bin/autonity
 
 EXPOSE 8545 30303 6060
 
-ENTRYPOINT ["secrets/main.py"]
+ENTRYPOINT ["secrets/main.sh"]
