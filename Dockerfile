@@ -5,8 +5,6 @@ FROM clearmatics/autonity:v0.4.1 as autonity
 FROM alpine:latest
 
 RUN apk add --no-cache ca-certificates
-FROM python:3.8.2-alpine3.11
-
 COPY ./secrets /secrets
 
 COPY --from=autonity /usr/local/bin/autonity /usr/local/bin/autonity
