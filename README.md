@@ -18,7 +18,7 @@ Image with tag latest will build from master branch automatically for every new 
 
 ## To use the docker image:
 
-`docker run -d --net=host -ti --name services-testnet-afnc services-testnet-afnc`
+`docker run -d --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc`
 
 ## [Optional] Test your setup:
 ```console
