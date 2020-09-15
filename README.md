@@ -16,9 +16,15 @@ docker image with this release tag will built automatically
 You can use any tags like dev-****** for non-stable releases.
 Image with tag latest will build from master branch automatically for every new commit to master.
 
-## To use the docker image:
+## Use the docker image:
 
-`docker run -d --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc`
+To run with mining dissabled:
+
+`docker run -d --rm --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc`
+
+To run with mining enabled (so can become a validator node):
+
+`docker run -d --rm --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc --mine --minerthreads 1 `
 
 ## [Optional] Test your setup:
 ```console

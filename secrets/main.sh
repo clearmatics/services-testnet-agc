@@ -8,6 +8,8 @@ $AUTONITY --nousb init secrets/genesis.json
 
 echo "Let's start the Node"
 
+echo "container args:" "$@"
+
 $AUTONITY  \
 	--gcmode archive \
 	--syncmode full \
@@ -24,8 +26,7 @@ $AUTONITY  \
 	--pprof \
 	--pprofaddr 0.0.0.0 \
 	--networkid 444900 \
-	--mine \
-	--minerthreads 1 \
 	--nousb \
 	--debug \
-	--verbosity 3
+	--verbosity 3\
+	"$@"
