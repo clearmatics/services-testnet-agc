@@ -8,8 +8,6 @@ $AUTONITY --nousb init secrets/genesis.json
 
 echo "Let's start the Node"
 
-echo "container args:" "$@"
-
 $AUTONITY  \
 	--gcmode archive \
 	--syncmode full \
