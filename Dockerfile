@@ -11,4 +11,7 @@ COPY --from=autonity /usr/local/bin/autonity /usr/local/bin/autonity
 
 EXPOSE 8545 30303 6060
 
+RUN apk update
+RUN apk add nano
+
 ENTRYPOINT ["secrets/main.sh"]
