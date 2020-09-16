@@ -18,7 +18,7 @@ Image with tag latest will build from master branch automatically for every new 
 
 ## Use the docker image:
 
-To run with mining dissabled:
+To run with mining disabled:
 
 `docker run -d --rm --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc`
 
