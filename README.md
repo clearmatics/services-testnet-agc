@@ -1,7 +1,7 @@
 # services-testnet-afnc
 Autonity Node Client packaged in a Docker Container configured for TestNet
 
-The workflow is:
+Workflow:
 * add Dockerfile in root directory
 * Make any changes
 * commit it to GitHub Repo (for example, merge to master
