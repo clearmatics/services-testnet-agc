@@ -14,4 +14,4 @@ EXPOSE 8545 30303 6060
 RUN apk update
 RUN apk add nano
 
-ENTRYPOINT exec /secrets/main.sh
+ENTRYPOINT [`/secrets/main.sh`]

@@ -8,7 +8,7 @@ $AUTONITY --nousb init secrets/genesis.json
 
 echo "Let's start the Node"
 
-$AUTONITY  \
+exec $AUTONITY  \
 	--gcmode archive \
 	--syncmode full \
 	--cache 1024 \
