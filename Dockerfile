@@ -14,4 +14,6 @@ EXPOSE 8545 30303 6060
 RUN apk update
 RUN apk add nano
 
-ENTRYPOINT [`/secrets/main.sh`]
+RUN autonity --nousb init secrets/genesis.json
+
+ENTRYPOINT ["secrets/main.sh"]

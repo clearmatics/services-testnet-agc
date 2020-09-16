@@ -1,14 +1,10 @@
 #!/bin/sh
 
-AUTONITY=autonity
-
-echo "Import the genesis"
-
-$AUTONITY --nousb init secrets/genesis.json
-
 echo "Let's start the Node"
+echo "container args:" "$@"
 
-exec $AUTONITY  \
+
+exec autonity  \
 	--gcmode archive \
 	--syncmode full \
 	--cache 1024 \
