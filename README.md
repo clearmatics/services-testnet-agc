@@ -7,7 +7,7 @@ The workflow is:
 * commit it to GitHub Repo (for example, merge to master
 * add release git tag like:
 
-`git tag v0.0.1`
+`git tag 0.4.1-testnet-v1.0`
 
 `git push --tags`
 
@@ -20,11 +20,11 @@ Image with tag latest will build from master branch automatically for every new 
 
 To run with mining disabled:
 
-`docker run -d --rm --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc`
+`docker run -d --rm --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc:latest`
 
 To run with mining enabled (so can become a validator node):
 
-`docker run -d --rm --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc --mine --minerthreads 1 `
+`docker run -d --rm --net=host -ti --name services-testnet-afnc clearmatics/services-testnet-afnc:latest --mine --minerthreads 1 `
 
 ## [Optional] Test your setup:
 ```console
