@@ -5,7 +5,6 @@ echo "container args:" "$@"
 
 
 exec autonity  \
-	--gcmode archive \
 	--syncmode full \
 	--cache 1024 \
 	--rpc \
