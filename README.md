@@ -39,7 +39,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 This image has been successfully tested on a GCP VM running Debian, as well as on an AWS VM running Amazon Linux. If you want to connect to the node from outside the VM, make sure to configure the firewall to allow incoming connections to the following ports:
 
-`TCP 8545, 30303, 6060`
+`TCP 8545, 8546, 30303, 6060`
 
 Make sure that the VM you are using has at least a 100Gb boot disk to store the blockchain. When initially syncing up with the network (which can take most of a day), it is recommended to use a VM with two virtual CPUs instead of one, so it does not become overloaded. You should downgrade to one once the node had caught up with the rest of the network.
 
