@@ -13,7 +13,7 @@ exec autonity  \
 	--rpcaddr 0.0.0.0 \
 	--rpccorsdomain "*" \
 	--ws \
-	--wsapi eth,web3,net \
+	--wsapi tendermint,console,eth,web3,admin,debug,miner,personal,txpool,net \
 	--wsorigins "*" \
 	--metrics \
 	--pprof \
