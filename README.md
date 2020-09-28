@@ -1,5 +1,6 @@
 # services-testnet-afnc
-Autonity Node Client packaged in a Docker Container configured for TestNet
+
+Autonity Go Client for Autonity nodes, packaged in a Docker Container configured for the Bakerloo testnet.
 
 Workflow:
 * add Dockerfile in root directory
@@ -7,7 +8,7 @@ Workflow:
 * commit it to GitHub Repo (for example, merge to master
 * add release git tag like:
 
-`git tag v0.4.1-testnet-1.0`
+`git tag v0.4.1.1`
 
 `git push --tags`
 
