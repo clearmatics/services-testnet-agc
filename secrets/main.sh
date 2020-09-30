@@ -15,6 +15,7 @@ exec autonity  \
 	--ws \
 	--wsapi tendermint,console,eth,web3,admin,debug,miner,personal,txpool,net \
 	--wsorigins "*" \
+	--wsaddr 0.0.0.0 \
 	--metrics \
 	--pprof \
 	--pprofaddr 0.0.0.0 \
