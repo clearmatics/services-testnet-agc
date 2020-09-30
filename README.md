@@ -21,11 +21,11 @@ Image with tag latest will build from master branch automatically for every new 
 
 To run with mining disabled:
 
-`docker run -d --net=host --name services-testnet-afnc clearmatics/services-testnet-afnc:v0.6.0.2`
+`docker run -d --net=host --name services-testnet-afnc clearmatics/services-testnet-afnc:v0.6.0.3`
 
 To run with mining enabled (so can become a validator node):
 
-`docker run -d --net=host --name services-testnet-afnc clearmatics/services-testnet-afnc:v0.6.0.2 --mine --minerthreads 1 `
+`docker run -d --net=host --name services-testnet-afnc clearmatics/services-testnet-afnc:v0.6.0.3 --mine --minerthreads 1 `
 
 ## [Optional] Test your setup:
 ```console
