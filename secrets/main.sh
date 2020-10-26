@@ -5,7 +5,7 @@ echo "container args:" "$@"
 
 
 exec autonity  \
-	--syncmode full \
+	--syncmode "fast" \
 	--cache 1024 \
 	--rpc \
 	--rpcapi eth,web3,net,tendermint,txpool,debug,admin \
