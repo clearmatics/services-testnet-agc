@@ -24,17 +24,20 @@ This container uses a shared folder for the Autontiy data, so the node database 
 To run with mining and full sync disabled:
 
 ```bash
+
 docker run -d --net=host \
 --name services-testnet-agc \
 --user $(id -u):$(id -g) \
 clearmatics/services-testnet-afnc:v0.7.0 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS>
-```bash
+
+```
 
 To run with mining enabled and full sync enabled (so can become a validator node):
 
 ```bash
+
 docker run -d --net=host \
 --name services-testnet-agc \ 
 --user $(id -u):$(id -g) \
@@ -42,7 +45,7 @@ clearmatics/services-testnet-afnc:v0.7.0 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS> \
 --mine --minerthreads 1 --syncmode full
-```bash
+```
 
 ## [Optional] Test your setup:
 ```console
