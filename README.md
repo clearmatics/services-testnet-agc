@@ -28,6 +28,7 @@ To run with mining and full sync disabled:
 docker run -d --net=host \
 --name services-testnet-agc \
 --user $(id -u):$(id -g) \
+-v $(pwd):/autonity \
 clearmatics/services-testnet-afnc:v0.7.0.0 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS>
@@ -41,6 +42,7 @@ To run with mining enabled and full sync enabled (so can become a validator node
 docker run -d --net=host \
 --name services-testnet-agc \ 
 --user $(id -u):$(id -g) \
+-v $(pwd):/autonity \
 clearmatics/services-testnet-afnc:v0.7.0.0 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS> \
