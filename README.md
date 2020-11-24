@@ -1,4 +1,4 @@
-# services-testnet-afnc
+# services-testnet-agc
 
 Autonity Go Client for Autonity nodes, packaged in a Docker Container configured for the Bakerloo testnet.
 
@@ -21,11 +21,11 @@ Image with tag latest will build from master branch automatically for every new 
 
 To run with mining and full sync disabled:
 
-`docker run -d --net=host --name services-testnet-afnc clearmatics/services-testnet-afnc:v0.6.0.6`
+`docker run -d --net=host --name services-testnet-agc clearmatics/services-testnet-agc:v0.6.0.6`
 
 To run with mining enabled and full sync enabled (so can become a validator node):
 
-`docker run -d --net=host --name services-testnet-afnc clearmatics/services-testnet-afnc:v0.6.0.6 --mine --minerthreads 1	--syncmode full`
+`docker run -d --net=host --name services-testnet-agc clearmatics/services-testnet-agc:v0.6.0.6 --mine --minerthreads 1	--syncmode full`
 
 ## [Optional] Test your setup:
 ```console
