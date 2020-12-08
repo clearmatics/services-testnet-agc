@@ -1,5 +1,5 @@
 # Build Autonity in a stock Go builder container
-FROM clearmatics/autonity:v0.7.0 as autonity
+FROM clearmatics/autonity:v0.7.1 as autonity
 
 # Pull Autonity into a second stage deploy alpine container
 FROM alpine:latest
