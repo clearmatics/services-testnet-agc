@@ -8,7 +8,7 @@ Workflow:
 * commit it to GitHub Repo (for example, merge to master
 * add release git tag like:
 
-`git tag v0.7.0.1`
+`git tag v0.7.1-bakerloo01`
 
 `git push --tags`
 
