@@ -1,4 +1,4 @@
-# services-testnet-afnc
+# services-testnet-agc
 
 Autonity Go Client for Autonity nodes, packaged in a Docker Container configured for the Bakerloo testnet.
 
@@ -24,21 +24,18 @@ This container uses a shared folder for the Autontiy data, so the node database 
 To run with mining and full sync disabled:
 
 ```bash
-
-docker run -d --net=host \
+docker run -d -ti --net=host \
 --name services-testnet-agc \
 --user $(id -u):$(id -g) \
 -v $(pwd):/autonity \
-clearmatics/services-testnet-afnc:v0.7.1-bakerloo01 \
+clearmatics/services-testnet-agc:v0.7.1-bakerloo01 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS>
-
 ```
 
-To run with mining enabled and full sync enabled (so can become a validator node):
+To run with block creation and full sync enabled (so can become a validator node):
 
 ```bash
-
 docker run -d --net=host \
 --name services-testnet-agc \ 
 --user $(id -u):$(id -g) \
