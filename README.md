@@ -8,7 +8,7 @@ Workflow:
 * commit it to GitHub Repo (for example, merge to master
 * add release git tag like:
 
-`git tag v0.4.1.1`
+`git tag v0.7.0.1`
 
 `git push --tags`
 
@@ -19,13 +19,32 @@ Image with tag latest will build from master branch automatically for every new 
 
 ## Use the docker image:
 
+This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local Autonity folder first.
+
 To run with mining and full sync disabled:
 
-`docker run -d --net=host --name services-testnet-agc clearmatics/services-testnet-agc:v0.6.0.6`
+```bash
+docker run -d -ti --net=host \
+--name services-testnet-agc \
+--user $(id -u):$(id -g) \
+-v $(pwd):/autonity \
+clearmatics/services-testnet-agc:v0.7.1-bakerloo01 \
+--datadir=/autonity \
+--nat extip:<IP_ADDRESS>
+```
 
-To run with mining enabled and full sync enabled (so can become a validator node):
+To run with block creation and full sync enabled (so can become a validator node):
 
-`docker run -d --net=host --name services-testnet-agc clearmatics/services-testnet-agc:v0.6.0.6 --mine --minerthreads 1	--syncmode full`
+```bash
+docker run -d --net=host \
+--name services-testnet-agc \ 
+--user $(id -u):$(id -g) \
+-v $(pwd):/autonity \
+clearmatics/services-testnet-afnc:v0.7.1-bakerloo01 \
+--datadir=/autonity \
+--nat extip:<IP_ADDRESS> \
+--mine --minerthreads 1 --syncmode full
+```
 
 ## [Optional] Test your setup:
 ```console
