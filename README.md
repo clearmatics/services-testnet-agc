@@ -19,7 +19,7 @@ Image with tag latest will build from master branch automatically for every new 
 
 ## Use the docker image:
 
-This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local Autonity folder first.
+This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local Autonity folder first. This version has been updated so it will also work with docker compose.
 
 To run with mining and full sync disabled:
 
@@ -28,7 +28,7 @@ docker run -d -ti --net=host \
 --name services-testnet-agc \
 --user $(id -u):$(id -g) \
 -v $(pwd):/autonity \
-clearmatics/services-testnet-agc:v0.7.1-bakerloo03 \
+clearmatics/services-testnet-agc:v0.7.1-bakerloo04 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS>
 ```
@@ -40,7 +40,7 @@ docker run -d --net=host \
 --name services-testnet-agc \ 
 --user $(id -u):$(id -g) \
 -v $(pwd):/autonity \
-clearmatics/services-testnet-afnc:v0.7.1-bakerloo03 \
+clearmatics/services-testnet-afnc:v0.7.1-bakerloo04 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS> \
 --mine --minerthreads 1 --syncmode full
