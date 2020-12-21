@@ -19,7 +19,7 @@ Image with tag latest will build from master branch automatically for every new 
 
 ## Use the docker image:
 
-This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local Autonity folder first. This version has been updated so it will also work with docker compose.
+This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local Autonity folder first. From `v0.7.1-bakerloo04`, this image has been updated so it is compatible with docker compose, with the new dockerize tool, which delays launching autonity until other dependencies have fully launched. These changes do not affect running autonity as a bare docker container.
 
 To run with mining and full sync disabled:
 
