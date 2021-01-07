@@ -1,22 +1,18 @@
 #!/bin/sh
 
-set -e
-
-host="$1"
+host=$1
 shift
-cmd="$@"
+cmd=$@
 
 recurse(){
-    echo $host
     HEADERS=`curl -Is --connect-timeout ${1-5} $host`
-    # HEADERS=`curl -Is --connect-timeout ${1-5} http://localhost:8888`
     HTTPSTATUS=`echo $HEADERS | grep HTTP | cut -d' ' -f2`
     CURLSTATUS=$?
 
     if [ $CURLSTATUS -eq 28 ]
         then
-            echo FALSE
-            sleep 2s
+            echo "fluentd not ready yet"
+            sleep 4s
             recurse
 
     else
@@ -28,9 +24,8 @@ recurse(){
                 # echo $cmd
                 exec $cmd
         else
-            echo FALSE
-            echo $HTTPSTATUS
-            sleep 2s
+            echo "fluentd not ready yet"
+            sleep 4s
             recurse
         fi
     fi
