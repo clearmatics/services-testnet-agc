@@ -5,9 +5,9 @@ shift
 cmd=$@
 
 recurse(){
-    HEADERS=`curl -Is --connect-timeout ${1-5} $host`
-    HTTPSTATUS=`echo $HEADERS | grep HTTP | cut -d' ' -f2`
+    HEADERS=`curl -Is --connect-timeout 5 $host`
     CURLSTATUS=$?
+    HTTPSTATUS=`echo $HEADERS | grep HTTP | cut -d' ' -f2`
 
     if [ $CURLSTATUS -eq 28 ]
         then
@@ -17,7 +17,7 @@ recurse(){
 
     else
         # Check HTTP status code
-        if [ $HTTPSTATUS -le 399 ]
+        if [ $HTTPSTATUS -eq 200 ]
             then
                 echo "Alright, fluentd is ready"
                 echo "http status = $HTTPSTATUS"
@@ -32,3 +32,4 @@ recurse(){
     } 
 
 recurse
+
