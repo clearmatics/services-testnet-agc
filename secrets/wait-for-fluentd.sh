@@ -10,37 +10,45 @@ foo(){
     HTTPSTATUS=`echo $HEADERS | grep HTTP | cut -d' ' -f2`
 
     # Check curl status
-    while [ $CURLSTATUS -eq 28 ]
+    while [[ $CURLSTATUS -eq 28 || $CURLSTATUS -eq 7 ]]
     do
         echo "fluentd not ready yet"
-        sleep 4s
+        sleep 2s
         HEADERS=`curl -Is --connect-timeout 5 $host`
         CURLSTATUS=$?
     done
 
-    # check HTTP status is not empty
-    while [ -z "$HTTPSTATUS" ]
-    do
-        echo "fluentd not ready yet"
-        sleep 4s
-        HEADERS=`curl -Is --connect-timeout 5 $host`
-        HTTPSTATUS=`echo $HEADERS | grep HTTP | cut -d' ' -f2`
-    done
+    
+    if [ $CURLSTATUS -eq 0 ]
+    then
 
-    # Check HTTP status code
-    while [ $HTTPSTATUS -ne 200 ]
-    do
-        echo "fluentd not ready yet"
-        sleep 4s
-        HEADERS=`curl -Is --connect-timeout 5 $host`
-        HTTPSTATUS=`echo $HEADERS | grep HTTP | cut -d' ' -f2`
-    done
+        # check HTTP status is not empty
+        while [ -z "$HTTPSTATUS" ]
+        do
+            echo "fluentd not ready yet"
+            sleep 2s
+            HEADERS=`curl -Is --connect-timeout 5 $host`
+            HTTPSTATUS=`echo $HEADERS | grep HTTP | cut -d' ' -f2`
+        done
 
+        # Check HTTP status code
+        while [ $HTTPSTATUS -ne 200 ]
+        do
+            echo "fluentd not ready yet"
+            sleep 2s
+            HEADERS=`curl -Is --connect-timeout 5 $host`
+            HTTPSTATUS=`echo $HEADERS | grep HTTP | cut -d' ' -f2`
+        done
 
-    echo "Alright, fluentd is ready"
-    echo "http status = $HTTPSTATUS"
-    # echo $cmd
-    exec $cmd
+        echo "Alright, fluentd is ready"
+        echo "http status = $HTTPSTATUS"
+        # echo $cmd
+        exec $cmd
+    
+    else
+        echo 'Error bad CURLSTATUS'
+        echo $CURLSTATUS
+    fi
 
     } 
 
