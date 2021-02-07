@@ -12,7 +12,7 @@ Workflow:
 
 `git push --tags`
 
-docker image with this release tag will built automatically
+Docker images with this release tag will be built automatically by GitHub Actions.
 
 You can use any tags like dev-****** for non-stable releases.
 Image with tag latest will build from master branch automatically for every new commit to master.
@@ -28,7 +28,7 @@ docker run -d -ti --net=host \
 --name services-testnet-agc \
 --user $(id -u):$(id -g) \
 -v $(pwd):/autonity \
-clearmatics/services-testnet-agc:v0.7.1-bakerloo04 \
+ghcr.io/clearmatics/services-testnet-agc:v0.7.1-bakerloo05 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS>
 ```
@@ -37,10 +37,10 @@ To run with block creation and full sync enabled (so can become a validator node
 
 ```bash
 docker run -d --net=host \
---name services-testnet-agc \ 
+--name services-testnet-agc \
 --user $(id -u):$(id -g) \
 -v $(pwd):/autonity \
-clearmatics/services-testnet-afnc:v0.7.1-bakerloo04 \
+ghcr.io/clearmatics/services-testnet-afnc:v0.7.1-bakerloo05 \
 --datadir=/autonity \
 --nat extip:<IP_ADDRESS> \
 --mine --minerthreads 1 --syncmode full
