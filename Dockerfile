@@ -1,5 +1,7 @@
 # Build Autonity in a stock Go builder container
-FROM clearmatics/autonity:v0.7.1 as autonity
+FROM ghcr.io/clearmatics/autonity:v0.7.1 as autonity
+
+LABEL org.opencontainers.image.source https://github.com/clearmatics/services-testnet-agc
 
 # Pull Autonity into a second stage deploy alpine container
 FROM alpine:latest
