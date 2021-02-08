@@ -15,13 +15,7 @@ EXPOSE 8545 8546 30303 6060
 
 RUN apk update
 RUN apk add nano
-
-# Add dockerize tool -------------------
-RUN apk add --no-cache openssl
-ENV DOCKERIZE_VERSION v0.6.1
-RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+RUN apk --no-cache add curl
 
 
 # CMD secrets/main.sh
