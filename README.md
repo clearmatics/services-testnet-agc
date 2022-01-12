@@ -19,16 +19,15 @@ Image with tag latest will build from master branch automatically for every new 
 
 ## Use the docker image:
 
-This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local Autonity folder first.
+This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local `autonity-chaindata/autonity/nodekey` directory first.
 
 ```bash
 IP_ADDRESS="$(curl ifconfig.me)"
 
 docker run --rm --net=host \
---name testnet-agc \
---user $(id -u):$(id -g) \
+--name services-testnet-agc \
 -v $(pwd)/autonity-chaindata:/autonity-chaindata \
-testnet-agc \
+services-testnet-agc \
 --nat extip:$(echo $IP_ADDRESS)
 ```
 
