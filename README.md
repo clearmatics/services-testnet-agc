@@ -27,7 +27,7 @@ IP_ADDRESS="$(curl ifconfig.me)"
 docker run --rm --net=host \
 --name services-testnet-agc \
 -v $(pwd)/autonity-chaindata:/autonity-chaindata \
-services-testnet-agc \
+services-testnet-agc:v0.8-bakerloo01 \
 --nat extip:$(echo $IP_ADDRESS)
 ```
 
