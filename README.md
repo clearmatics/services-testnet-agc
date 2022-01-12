@@ -19,31 +19,16 @@ Image with tag latest will build from master branch automatically for every new 
 
 ## Use the docker image:
 
-This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local Autonity folder first. From `v0.7.1-bakerloo05`, this image has been updated so it is compatible with docker compose, with a new script that delays launching autonity until other dependencies have fully launched. These changes do not affect running autonity as a bare docker container.
-
-To run with mining and full sync disabled:
+This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local `autonity-chaindata/autonity/nodekey` directory first.
 
 ```bash
-docker run -d -ti --net=host \
---name services-testnet-agc \
---user $(id -u):$(id -g) \
--v $(pwd):/autonity \
-ghcr.io/clearmatics/services-testnet-agc:v0.7.1-bakerloo05 \
---datadir=/autonity \
---nat extip:<IP_ADDRESS>
-```
+IP_ADDRESS="$(curl ifconfig.me)"
 
-To run with block creation and full sync enabled (so can become a validator node):
-
-```bash
-docker run -d --net=host \
+docker run --rm --net=host \
 --name services-testnet-agc \
---user $(id -u):$(id -g) \
--v $(pwd):/autonity \
-ghcr.io/clearmatics/services-testnet-afnc:v0.7.1-bakerloo05 \
---datadir=/autonity \
---nat extip:<IP_ADDRESS> \
---mine --minerthreads 1 --syncmode full
+-v $(pwd)/autonity-chaindata:/autonity-chaindata \
+services-testnet-agc \
+--nat extip:$(echo $IP_ADDRESS)
 ```
 
 ## [Optional] Test your setup:

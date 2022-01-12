@@ -1,0 +1,102 @@
+{
+  "alloc": {
+    "0x0c7dC2aB00c7b5934EDA097a8585f56367A94dA4": {
+      "balance": "10000000000000000000000"
+    },
+    "0x1ae9B1B3207195430a36D82Fc0bDA1f857D0AA72": {
+      "balance": "10000000000000000000000"
+    },
+    "0x293039dDC627B1dF9562380c0E5377848F94325A": {
+      "balance": "1000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "0x33BF54630991f0a1A23B9f102873b3B54C4b94B3": {
+      "balance": "10000000000000000000000"
+    },
+    "0x4b7275d5F5292C3027a16E0eb891D75a0Ef39cc7": {
+      "balance": "10000000000000000000000"
+    },
+    "0x5e08564Ee99E96e690E9b25591191aE0c78351a3": {
+      "balance": "10000000000000000000000"
+    },
+    "0xe8Af231A9d2e4C7Dc1479b372b937A8dB738D956": {
+      "balance": "1000000000000000000000000000000000000"
+    },
+    "0xf5A48b1Df2a3a616AdB92E57d6ce36E17c3C2a0b": {
+      "balance": "10000000000000000000000"
+    }
+  },
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "config": {
+    "autonityContract": {
+      "blockPeriod": 1,
+      "epochPeriod": 30,
+      "minGasPrice": 10000000000,
+      "operator": "0x293039dDC627B1dF9562380c0E5377848F94325A",
+      "treasury": "0x7f1B212dcDc119a395Ec2B245ce86e9eE551043E",
+      "treasuryFee": 150000000,
+      "unbondingPeriod": 120,
+      "validators": [
+        {
+          "bondedStake": 10000,
+          "commissionRate": 100000000,
+          "enode": "enode://181dd52828614267b2e3fe16e55721ce4ee428a303b89a0cba3343081be540f28a667c9391024718e45ae880088bd8b6578e82d395e43af261d18cedac7f51c3@35.246.21.247:30303",
+          "extra": "validator-0.bakerloo.autonity.network",
+          "treasury": "0x3e08FEc6ABaf669BD8Da54abEe30b2B8B5024013"
+        },
+        {
+          "bondedStake": 10000,
+          "commissionRate": 100000000,
+          "enode": "enode://e3b8ea9ddef567225530bcbae68af5d46f59a2b39acc04113165eba2744f6759493027237681f10911d4c12eda729c367f8e64dfd4789c508b7619080bb0861b@35.189.64.207:30303",
+          "extra": "validator-1.bakerloo.autonity.network",
+          "treasury": "0xf1859D9feD50514F9D805BeC7a30623d061f40B7"
+        },
+        {
+          "bondedStake": 10000,
+          "commissionRate": 100000000,
+          "enode": "enode://00c6c1704c103e74a26ad072aa680d82f6c677106db413f0afa41a84b5c3ab3b0827ea1a54511f637350e4e31d8a87fdbab5d918e492d21bea0a399399a9a7b5@34.105.163.137:30303",
+          "extra": "validator-2.bakerloo.autonity.network",
+          "treasury": "0x1B441084736B80f273e498E646b0bEA86B4eC6AB"
+        },
+        {
+          "bondedStake": 10000,
+          "commissionRate": 100000000,
+          "enode": "enode://dffaa985bf36c8e961b9aa7bcdd644f1ad80e07d7977ce8238ac126d4425509d98da8c7f32a3e47e19822bd412ffa705c4488ce49d8b1769b8c81ee7bf102249@35.177.8.113:30308",
+          "extra": "validator-3.bakerloo.autonity.network",
+          "treasury": "0xB5C49d50470743D8dE43bB6822AC4505E64648Da"
+        },
+        {
+          "bondedStake": 10000,
+          "commissionRate": 100000000,
+          "enode": "enode://1bd367bfb421eb4d21f9ace33f9c3c26cd1f6b257cc4a1af640c9af56f338d865c8e5480c7ee74d5881647ef6f71d880104690936b72fdc905886e9594e976d1@35.179.46.181:30309",
+          "extra": "validator-4.bakerloo.autonity.network",
+          "treasury": "0x31e1dE659A26F7638FAaFEfD94D47258FE361823"
+        },
+        {
+          "bondedStake": 10000,
+          "commissionRate": 100000000,
+          "enode": "enode://a7465d99513715ece132504e47867f88bb5e289b8bca0fca118076b5c733d901305db68d1104ab838cf6be270b7bf71e576a44644d02f8576a4d43de8aeba1ab@3.9.98.39:30310",
+          "extra": "validator-5.bakerloo.autonity.network",
+          "treasury": "0xe22617BD2a4e1Fe3938F84060D8a6be7A18a2ef9"
+        }
+      ]
+    },
+    "byzantiumBlock": 0,
+    "chainId": 444900,
+    "constantinopleBlock": 0,
+    "eip150Block": 0,
+    "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "homesteadBlock": 0,
+    "istanbulBlock": 0,
+    "petersburgBlock": 0
+  },
+  "difficulty": "0x1",
+  "gasLimit": "10000000000",
+  "gasUsed": "0x0",
+  "mixHash": "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+  "nonce": "0x0",
+  "number": "0x0",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "timestamp": "0x0"
+}

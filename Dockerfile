@@ -1,23 +1,10 @@
-# Build Autonity in a stock Go builder container
-FROM ghcr.io/clearmatics/autonity:v0.7.1 as autonity
+# Pull Autonity into a second stage deploy Ubuntu container
+FROM ubuntu:20.04
 
-LABEL org.opencontainers.image.source https://github.com/clearmatics/services-testnet-agc
-
-# Pull Autonity into a second stage deploy alpine container
-FROM alpine:latest
-
-RUN apk add --no-cache ca-certificates
-COPY ./secrets /secrets
-
-COPY --from=autonity /usr/local/bin/autonity /usr/local/bin/autonity
-
+ADD ./files /files
+ADD ./autonity /usr/local/bin/autonity
 EXPOSE 8545 8546 30303 6060
 
-RUN apk update
-RUN apk add nano
-RUN apk --no-cache add curl
+RUN apt-get update
 
-
-# CMD secrets/main.sh
-ENTRYPOINT ["secrets/main.sh"]
-
+ENTRYPOINT ["files/main.sh"]
