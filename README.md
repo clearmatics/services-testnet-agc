@@ -8,7 +8,7 @@ Workflow:
 * commit it to GitHub Repo (for example, merge to master
 * add release git tag like:
 
-`git tag v0.7.1-bakerloo01`
+`git tag v0.8.0-bakerloo01`
 
 `git push --tags`
 
@@ -27,7 +27,7 @@ IP_ADDRESS="$(curl ifconfig.me)"
 docker run --rm --net=host \
 --name services-testnet-agc \
 -v $(pwd)/autonity-chaindata:/autonity-chaindata \
-services-testnet-agc \
+services-testnet-agc:v0.8.0-bakerloo01 \
 --nat extip:$(echo $IP_ADDRESS)
 ```
 
