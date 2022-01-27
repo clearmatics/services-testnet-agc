@@ -3,6 +3,7 @@
 echo "Let's start the Node"
 echo "container args:" "$@"
 
+cp files/static-nodes.json autonity-chaindata
 
 exec autonity \
         --genesis ./files/genesis.json \
