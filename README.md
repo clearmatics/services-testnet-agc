@@ -2,6 +2,7 @@
 
 ## NOTE: The Bakerloo Testnet currently runs on an un-released, unsupported, and not publicly documented internal build of Autonity. If you are interested, please get in touch on [Discord](https://discord.gg/6daqJDt) for help running a node on it.
 
+
 Autonity Go Client for Autonity nodes, packaged in a Docker Container configured for the Bakerloo testnet.
 
 Workflow:
@@ -16,6 +17,12 @@ Workflow:
 
 Docker images with this release tag will be built automatically by GitHub Actions.
 
+* push to ghcr like:
+
+`docker tag autonity:latest ghcr.io/clearmatics/services-testnet-agc:v0.8.0-bakerloo01`
+
+`docker push ghcr.io/clearmatics/services-testnet-agc:v0.8.0-bakerloo01`
+
 You can use any tags like dev-****** for non-stable releases.
 Image with tag latest will build from master branch automatically for every new commit to master.
 
@@ -24,12 +31,14 @@ Image with tag latest will build from master branch automatically for every new 
 This container uses a shared folder for the Autontiy data, so the node database and identity store will be persistent. If you want to start a fresh node with a new identity, make sure you delete the local `autonity-chaindata/autonity/nodekey` directory first.
 
 ```bash
+mkdir autonity-chaindata
 IP_ADDRESS="$(curl ifconfig.me)"
 
 docker run --rm --net=host \
 --name services-testnet-agc \
 -v $(pwd)/autonity-chaindata:/autonity-chaindata \
- ghcr.io/clearmatics/services-testnet-agc:v0.8.0-bakerloo01 \
+ghcr.io/clearmatics/services-testnet-agc:v0.8.0-bakerloo03 \
+
 --nat extip:$(echo $IP_ADDRESS)
 ```
 
