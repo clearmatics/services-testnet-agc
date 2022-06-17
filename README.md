@@ -1,6 +1,6 @@
 # services-testnet-agc
 
-*This is an unsupported internal build of Autonitiy for the current Bakerloo network, for more information get in touch on [Discord](https://discord.gg/6daqJDt)*
+## NOTE: The Bakerloo Testnet currently runs on an un-released, unsupported, and not publicly documented internal build of Autonity. If you are interested, please get in touch on [Discord](https://discord.gg/6daqJDt) for help running a node on it.
 
 
 Autonity Go Client for Autonity nodes, packaged in a Docker Container configured for the Bakerloo testnet.
