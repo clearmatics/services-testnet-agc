@@ -8,6 +8,7 @@ Autonity Go Client for Autonity nodes, packaged in a Docker Container configured
 Workflow:
 * add Dockerfile in root directory
 * Make any changes
+* Build the image: `docker build -t services-testnet-agc .`
 * commit it to GitHub Repo (for example, merge to master
 * add release git tag like:
 
@@ -19,9 +20,9 @@ Docker images with this release tag will be built automatically by GitHub Action
 
 * push to ghcr like:
 
-`docker tag autonity:latest ghcr.io/clearmatics/services-testnet-agc:v0.8.0-bakerloo01`
+`docker tag services-testnet-agc:latest ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo`
 
-`docker push ghcr.io/clearmatics/services-testnet-agc:v0.8.0-bakerloo01`
+`docker push ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo`
 
 You can use any tags like dev-****** for non-stable releases.
 Image with tag latest will build from master branch automatically for every new commit to master.
@@ -37,7 +38,7 @@ IP_ADDRESS="$(curl ifconfig.me)"
 docker run --rm --net=host \
 --name services-testnet-agc \
 -v $(pwd)/autonity-chaindata:/autonity-chaindata \
-ghcr.io/clearmatics/services-testnet-agc:v0.8.0-bakerloo03 \
+ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo \
 --nat extip:$(echo $IP_ADDRESS)
 ```
 

@@ -6,7 +6,7 @@ echo "container args:" "$@"
 cp files/static-nodes.json autonity-chaindata
 
 exec autonity \
-        --genesis ./files/genesis.json \
+        --bakerloo \
         --cache 1024 \
         --http \
         --http.api eth,web3,net,tendermint,txpool,debug,admin \
@@ -20,10 +20,9 @@ exec autonity \
         --metrics \
         --pprof \
         --pprof.addr 0.0.0.0 \
-        --networkid 444900 \
+        --networkid  "65010000"\
         --nousb \
-        --debug \
         --verbosity 3 \
         --datadir ./autonity-chaindata \
-        --syncmode fast \
+        --syncmode snap \
         "$@"
