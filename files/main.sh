@@ -7,7 +7,6 @@ cp files/static-nodes.json autonity-chaindata
 
 exec autonity \
         --bakerloo \
-        --cache 1024 \
         --http \
         --http.api eth,web3,net,tendermint,txpool,debug,admin \
         --http.vhosts 127.0.0.1 \

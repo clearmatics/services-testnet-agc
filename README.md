@@ -12,7 +12,7 @@ Workflow:
 * commit it to GitHub Repo (for example, merge to master
 * add release git tag like:
 
-`git tag v0.8.0-bakerloo01`
+`git tag v0.8.4-bakerloo01`
 
 `git push --tags`
 
@@ -20,9 +20,9 @@ Docker images with this release tag will be built automatically by GitHub Action
 
 * push to ghcr like:
 
-`docker tag services-testnet-agc:latest ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo`
+`docker tag services-testnet-agc:latest ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo01`
 
-`docker push ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo`
+`docker push ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo01`
 
 You can use any tags like dev-****** for non-stable releases.
 Image with tag latest will build from master branch automatically for every new commit to master.
@@ -38,7 +38,7 @@ IP_ADDRESS="$(curl ifconfig.me)"
 docker run --rm --net=host \
 --name services-testnet-agc \
 -v $(pwd)/autonity-chaindata:/autonity-chaindata \
-ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo \
+ghcr.io/clearmatics/services-testnet-agc:v0.8.4-bakerloo01 \
 --nat extip:$(echo $IP_ADDRESS)
 ```
 
