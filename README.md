@@ -51,6 +51,10 @@ apt install curl
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:8545
 ```
 
+## View instructions on running Autonity and interacting with network
+
+To see in depth instructions on how to get started with Autonity using either the docker image or the Autonity binary to run a node, view the markdown file `autonity-instructions`.
+
 ## Running on a cloud VM
 
 This image has been successfully tested on a GCP VM running Debian, as well as on an AWS VM running Amazon Linux. If you want to connect to the node from outside the VM, make sure to configure the firewall to allow incoming connections to the following ports:
