@@ -12,7 +12,7 @@ To run an Autonity Bakerloo testnet node, we recommend using a host machine (whi
 - Linux (e.g. Ubuntu 20.04 LTS, or another recent system)
 - two CPU cores
 - 8GB of RAM
-- 250GB of persistent storage space (preferably SSD)
+- 1024GB of persistent storage space (preferably SSD)
 
 
 
@@ -42,7 +42,6 @@ Go Version: go1.18
 Operating System: linux
 GOPATH=
 GOROOT=/usr/local/go
-
 ```
 
 ### Autonity NodeJS Console
@@ -71,32 +70,31 @@ Provide the genesis and bootnode files and run Autonity. Autonity will initialis
 
 1. Start autonity with the following command - the blockchain will download in "snap syncmode" - takes about 20mins depending on your connection.
 
-    ``` bash
-    IP_ADDRESS="$(curl ifconfig.me)"
+  ``` bash
+  IP_ADDRESS="$(curl ifconfig.me)"
 
-    autonity \
-        --bakerloo \
-        --cache 1024 \
-        --http \
-        --http.api eth,web3,net,tendermint,txpool,debug,admin \
-        --http.vhosts 127.0.0.1 \
-        --http.addr 0.0.0.0 \
-        --http.corsdomain 127.0.0.1 \
-        --ws \
-        --ws.api tendermint,eth,web3,admin,debug,personal,txpool,net \
-        --ws.origins "*" \
-        --ws.addr 0.0.0.0 \
-        --metrics \
-        --pprof \
-        --pprof.addr 0.0.0.0 \
-        --networkid  "65010000"\
-        --nousb \
-        --verbosity 3 \
-        --datadir ./autonity-chaindata \
-        --syncmode snap \
-        --nat extip:$(echo $IP_ADDRESS)
-
-    ```
+  autonity \
+      --bakerloo \
+      --cache 1024 \
+      --http \
+      --http.api eth,web3,net,tendermint,txpool,debug,admin \
+      --http.vhosts 127.0.0.1 \
+      --http.addr 0.0.0.0 \
+      --http.corsdomain 127.0.0.1 \
+      --ws \
+      --ws.api tendermint,eth,web3,admin,debug,personal,txpool,net \
+      --ws.origins "*" \
+      --ws.addr 0.0.0.0 \
+      --metrics \
+      --pprof \
+      --pprof.addr 0.0.0.0 \
+      --networkid  "65010000"\
+      --nousb \
+      --verbosity 3 \
+      --datadir ./autonity-chaindata \
+      --syncmode snap \
+      --nat extip:$(echo $IP_ADDRESS)
+  ```
 
 When Autonity has fully synched up, it will continue to import new chain segments as they are created.
     
@@ -209,24 +207,24 @@ To submit transactions to a client node from the Autonity NodeJS Console you nee
 
 1. Navigate to your Autonity NodeJS Console install directory  and initialise a console session, specifying the IP address of the node you will connect to. The connection is made over WebSockets to port 8546:
 
-    ```bash
-    ./console ws://<IP-ADDRESS>:8546
-    ```
+```bash
+./console ws://<IP-ADDRESS>:8546
+```
 
 
 2. Enter the following in the NodeJS Console, specifying the private key of the account submitting the transaction:
 
-    ```javascript
-    const privatekey = '<PRIVATE_KEY>';
-    const account = web3.eth.accounts.wallet.add(privatekey);
-    const myAddress = web3.utils.toChecksumAddress(account.address);
-    const gas = 10000000;
-    const gasPrice = 10000000000;
-    ```
+```javascript
+const privatekey = '<PRIVATE_KEY>';
+const account = web3.eth.accounts.wallet.add(privatekey);
+const myAddress = web3.utils.toChecksumAddress(account.address);
+const gas = 10000000;
+const gasPrice = 10000000000;
+```
 
-    You are now able to submit state affecting transactions to the Autonity network from the configured account. Transactions must be appended with `.send({from: myAddress, gas: gas, gasPrice: gasPrice})`
+You are now able to submit state affecting transactions to the Autonity network from the configured account. Transactions must be appended with `.send({from: myAddress, gas: gas, gasPrice: gasPrice})`
 
-    When a transaction is successful, you will receive a transaction receipt.
+When a transaction is successful, you will receive a transaction receipt.
 
 ### Examples 
 
@@ -250,7 +248,6 @@ await autonity.approve('<spender>', <amount>).send({from: myAddress, gas: gas, g
 ```javascript
 await autonity.transferFrom('<sender>', '<recipient>', <amount>).send({from: myAddress, gas: gas, gasPrice: gasPrice})
 ```
-
 
 # Bonding and unbonding stake
 
