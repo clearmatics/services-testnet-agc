@@ -1,0 +1,30 @@
+[Service]
+#User=autonity
+#Group=autonity
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=autonity \
+  --datadir /root/autonity/chaindata \
+  --piccadilly \
+  --http \
+  --http.api aut,debug,eth,net,tendermint,txpool,web3,admin \
+  --http.vhosts 127.0.0.1 \
+  --http.addr 0.0.0.0 \
+  --http.corsdomain 127.0.0.1 \
+  --ws \
+  --ws.api aut,debug,eth,net,tendermint,personal,txpool,web3,admin \
+  --ws.origins "*" \
+  --ws.addr 0.0.0.0 \
+  --metrics \
+  --verbosity 3 \
+  --gcmode archive \
+  --syncmode full \
+  --nat extip:46.101.67.103 \
+  --pprof \
+  --pprof.addr 0.0.0.0 \
+  --graphql \
+  --graphql.vhosts *
+
+[Install]
+WantedBy=default.target
