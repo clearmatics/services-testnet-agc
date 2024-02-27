@@ -6,21 +6,28 @@ Restart=always
 RestartSec=5
 ExecStart=autonity \
   --datadir /root/autonity/chaindata \
-  --piccadilly \
+  --autonitykeys /nodekey \
+  --bakerloo \
   --http \
-  --http.api aut,debug,eth,net,tendermint,txpool,web3,admin \
+  --http.api aut,eth,net,tendermint,txpool,web3 \
   --http.vhosts 127.0.0.1 \
   --http.addr 0.0.0.0 \
   --http.corsdomain 127.0.0.1 \
   --ws \
-  --ws.api aut,debug,eth,net,tendermint,personal,txpool,web3,admin \
+  --ws.api aut,eth,net,tendermint,personal,txpool,web3 \
   --ws.origins "*" \
   --ws.addr 0.0.0.0 \
   --metrics \
   --verbosity 3 \
-  --gcmode archive \
   --syncmode full \
-  --nat extip:46.101.67.103 \
+  --nat extip: \
+  --consensus.nat extip:{{ external_ip }} \
+  --metrics.influxdb.endpoint  \
+  --metrics.influxdb.tags "host=validator-4" \
+  --metrics.influxdbv2 \
+  --metrics.influxdb.token "" \
+  --metrics.influxdb.bucket "" \
+  --metrics.influxdb.organization "" \
   --pprof \
   --pprof.addr 0.0.0.0
 
