@@ -1,0 +1,102 @@
+{
+    "config":{
+       "chainId":65110000,
+       "autonity":{
+          "minBaseFee":5000,
+          "delegationRate":1000,
+          "blockPeriod":1,
+          "maxCommitteeSize":10,
+          "unbondingPeriod":1800,
+          "epochPeriod":1800,
+          "treasury":"0x8FB0E16C2B3C6857f64FaF05eAfd21247c8a831B",
+          "treasuryFee":150000000,
+          "operator":"0x2f3BcE2d6C2602de594d9a6662f0b93416cfB4d7",
+          "validators":[
+             {
+                "enode":"enode://1c4887d19541ab1896e8198ebc67c45e51c03c7b674c84315beaa2fac24fc80b73f8ebef973a85a0e546c1c285a616d44ce68f528be1c2671f0274314bd83947@35.197.223.249:30303",
+                "treasury":"0x61EE7d3244642E5f6D654416a098DEabFBF5306e",
+                "consensusKey": "0xaee50eaeb2916fdc4988940a695f72d957563d66f024e2e66773ec3e1af7d4c3016a199bb68bbe300ff00fa0bf46acbe",
+                "oracleAddress":"0x9b844631B7279576330B9B822bE79266696fF8C2",
+                "bondedStake":10000000000000000000000
+             },
+             {
+                "enode":"enode://d26d94cab4a308dbd93fcf144917441928509424d12dc98f84fcfbe080648821bf3dd2e707759dbe0bcf5e96184c93ad2c69b385c548d79b23791a556f26e0e4@34.89.41.50:30303",
+                "treasury":"0x4Cd002d1F868A7A1e897622721059A24a383beB7",
+                "consensusKey": "0xb755645be450ab5995ea4fd1f21ffc41e8fc56ace72dfcfbb31fb32f280b16d173f5e62b91a625d6ef2463266c90a04a",
+                "oracleAddress":"0x636d3D9711F0f3907313dC5E2Aa08e73c0608A03",
+                "bondedStake":10000000000000000000000
+             },
+             {
+                "enode":"enode://d6b232d32f0221f100b08411e78fd3cadff1a0115050bc318e2003e01f3946bab0f22183b856931c51f6b6a382312bd35b1d882582eed10c58257f4a755e38c1@35.197.202.245:30303",
+                "treasury":"0x8390728eED6F25b9EDA236Ce925441Bb40a184c7",
+                "consensusKey": "0x8fea8af63bf7c9be41992341040409826829aeb599b6525e7e65a14f2db995b8387858a504ef5cf6e36e2465db7840ae",
+                "oracleAddress":"0xd4d2874450a21f1Bf5E1C12260773d8716b526B8",
+                "bondedStake":10000000000000000000000
+             }
+          ]
+       },
+       "accountability": {
+          "innocenceProofSubmissionWindow": 600,
+          "baseSlashingRateLow": 1000,
+          "baseSlashingRateMid": 2000,
+          "collusionFactor": 800,
+          "historyFactor": 500,
+          "jailFactor": 2,
+          "slashingRatePrecision": 10000
+        },
+        "asm":{
+          "supplycontrol":{
+             "initialAllocation": "0x84595161401484A000000" 
+          }
+       },
+       "oracle":{
+          "symbols":[
+             "AUD-USD",
+             "CAD-USD",
+             "EUR-USD",
+             "GBP-USD",
+             "JPY-USD",
+             "SEK-USD",
+             "ATN-USD",
+             "NTN-USD",
+             "NTN-ATN"
+          ],
+          "votePeriod":30
+       }
+    },
+    "nonce":"0x0",
+    "timestamp":"0x0",
+    "baseFee":"15000000000",
+    "gasLimit":"30000000",
+    "difficulty":"0x0",
+    "coinbase":"0x0000000000000000000000000000000000000000",
+    "number":"0x0",
+    "gasUsed":"0x0",
+    "parentHash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+    "mixHash":"0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+    "alloc":{
+       "0x2f3BcE2d6C2602de594d9a6662f0b93416cfB4d7":{
+          "balance":"0x10F802360F65B942580000"
+       },
+       "0x9b844631B7279576330B9B822bE79266696fF8C2":{
+          "balance":"0x20000000000000000"
+       },
+       "0x636d3D9711F0f3907313dC5E2Aa08e73c0608A03":{
+          "balance":"0x20000000000000000"
+       },
+       "0xd4d2874450a21f1Bf5E1C12260773d8716b526B8":{
+ 
+          "balance":"0x20000000000000000"
+       },
+       "0x8aCC6d8D314AFA5666AD21228fD22cf889c117D7":{
+          "balance":"0x20000000000000000"
+       },
+       "0x0C8Eb027aBa998B4D6B97606F30D560D51aD112A":{
+          "balance":"0x20000000000000000"
+       },
+       "0xe6742DF1640b40B89fb4c774C3449083F29288dF":{
+          "balance":"0x20000000000000000"
+       }
+ 
+    }
+  }
